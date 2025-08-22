@@ -1,55 +1,34 @@
 version: 2
 updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    open-pull-requests-limit: 10
+    labels:
+      - 'dependencies'
+    commit-message:
+      prefix: 'ci'
+      include: 'scope'
+    groups:
+      actions-minor-patch:
+        update-types:
+          - 'minor'
+          - 'patch'
+
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
       interval: 'daily'
-      time: '09:00'
-      timezone: 'UTC'
     open-pull-requests-limit: 10
-    groups:
-      # Group semantic-release dependencies
-      semantic-release-dependencies:
-        patterns:
-          - '@semantic-release/*'
-          - 'semantic-release*'
-          - 'conventional-changelog*'
-      # Group development and formatting dependencies
-      dev-dependencies:
-        patterns:
-          - 'prettier'
-
     labels:
       - 'dependencies'
     commit-message:
       prefix: 'chore'
-      prefix-development: 'chore(dev)'
-    # Allow Dependabot to update lockfiles (bun.lockb)
-    allow:
-      - dependency-type: 'all'
-    # Ignore built-in Node.js modules
-    ignore:
-      - dependency-name: 'fs'
-      - dependency-name: 'util'
-      - dependency-name: 'path'
-    # Auto-merge minor and patch updates for trusted dependencies
-    reviewers:
-      - 'iamvikshan'
-
-  - package-ecosystem: 'github-actions'
-    directory: '/'
-    schedule:
-      interval: 'weekly'
-      day: 'monday'
-      time: '09:00'
-      timezone: 'UTC'
-    open-pull-requests-limit: 5
+      prefix-development: 'chore'
+      include: 'scope'
     groups:
-      github-actions:
-        patterns:
-          - '*'
-    labels:
-      - 'gh-actions'
-      - 'dependencies'
-    commit-message:
-      prefix: 'chore(ci)'
+      npm-minor-patch:
+        update-types:
+          - 'minor'
+          - 'patch'

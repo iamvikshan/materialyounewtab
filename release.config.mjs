@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   branches: ['main'],
   plugins: [
     [
@@ -86,10 +86,13 @@ module.exports = {
       '@semantic-release/exec',
       {
         prepareCmd: [
-          // Update manifest.json version
-          "node -e \"const fs = require('fs'); const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8')); manifest.version = '${nextRelease.version}'; fs.writeFileSync('manifest.json', JSON.stringify(manifest, null, 2));\"",
-          // Update Firefox manifest version
-          "node -e \"const fs = require('fs'); const manifest = JSON.parse(fs.readFileSync('manifest(firefox).json', 'utf8')); manifest.version = '${nextRelease.version}'; fs.writeFileSync('manifest(firefox).json', JSON.stringify(manifest, null, 2));\"",
+          // Update manifest.json version (ESM inline)
+          "node --input-type=module -e \"import { readFileSync, writeFileSync } from 'node:fs'; const manifest = JSON.parse(readFileSync('manifest.json', 'utf8')); manifest.version = '${nextRelease.version}'; writeFileSync('manifest.json', JSON.stringify(manifest, null, 2));\"",
+          // Update Firefox manifest version (ESM inline)
+          "node --input-type=module -e \"import { readFileSync, writeFileSync } from 'node:fs'; const manifest = JSON.parse(readFileSync('manifest(firefox).json', 'utf8')); manifest.version = '${nextRelease.version}'; writeFileSync('manifest(firefox).json', JSON.stringify(manifest, null, 2));\"",
+          // Update README.md version references
+          "sed -i 's|(v[0-9]\\+\\.[0-9]\\+\\.[0-9]\\+)|(v${nextRelease.version})|g' README.md",
+          "sed -i 's|refs/tags/v[0-9]\\+\\.[0-9]\\+\\.[0-9]\\+\\.zip|refs/tags/v${nextRelease.version}.zip|g' README.md",
           // Update package.json version
           'npm version ${nextRelease.version} --no-git-tag-version',
         ].join(' && '),
@@ -103,6 +106,7 @@ module.exports = {
           'package.json',
           'manifest.json',
           'manifest(firefox).json',
+          'README.md',
           'CHANGELOG.md',
         ],
         message:
