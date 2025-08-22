@@ -12,7 +12,9 @@
     "https://*.wikipedia.org/w/api.php?action=opensearch&search=*"
   ],
   "background": {
-    "scripts": ["scripts/background.js"],
+    "scripts": [
+      "scripts/background.js"
+    ],
     "persistent": true
   },
   "icons": {
