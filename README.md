@@ -1,7 +1,8 @@
 <!-- Initialized : Sun 20 Aug 2023 03:41:08 PM IST -->
+<!-- Originally created by XengShi, now maintained by Vikshan -->
 <h1 align="center">
 
-<a href="https://xengshi.github.io/materialYouNewTab/"><img src="https://i.ibb.co/x11pGSs/icon-128.png" width="50"></a>
+<a href="https://iamvikshan.github.io/materialyounewtab/"><img src="https://i.ibb.co/x11pGSs/icon-128.png" width="50"></a>
 <br>
 Material You NewTab
 
@@ -14,11 +15,11 @@ Material You NewTab is a versatile browser extension that personalizes your New 
 
 <div align="center">
 
-![License](https://img.shields.io/github/license/XengShi/materialYouNewTab)
-![Last Commit](https://img.shields.io/github/last-commit/XengShi/materialYouNewTab)
-![GitHub contributors](https://img.shields.io/github/contributors/XengShi/materialYouNewTab)
-![GitHub stars](https://img.shields.io/github/stars/XengShi/materialYouNewTab)
-![GitHub forks](https://img.shields.io/github/forks/XengShi/materialYouNewTab)
+![License](https://img.shields.io/github/license/iamvikshan/materialyounewtab)
+![Last Commit](https://img.shields.io/github/last-commit/iamvikshan/materialyounewtab)
+![GitHub contributors](https://img.shields.io/github/contributors/iamvikshan/materialyounewtab)
+![GitHub stars](https://img.shields.io/github/stars/iamvikshan/materialyounewtab)
+![GitHub forks](https://img.shields.io/github/forks/iamvikshan/materialyounewtab)
 
 </div>
 
@@ -38,7 +39,7 @@ Material You NewTab is a versatile browser extension that personalizes your New 
 
 <img src="https://i.postimg.cc/CF43Yzj1/material-you-new-Tab-poster.webp" alt="Screenshot 1" width="100%">
 
-#### 🔴 🟡 🟢 Test live: [https://xengshi.github.io/materialYouNewTab/](https://xengshi.github.io/materialYouNewTab/)
+#### 🔴 🟡 🟢 Test live: [https://iamvikshan.github.io/materialyounewtab/](https://iamvikshan.github.io/materialyounewtab/)
 
 ## ✨ Features
 
@@ -51,28 +52,27 @@ Material You NewTab is a versatile browser extension that personalizes your New 
 
 ### Download
 
-1. **Development Version** (v3.1.*)
+1. **Development Version** (v1.0.0)
+   - **Clone the Repository**:
+     Use the following command to clone the repository:
 
-    - **Clone the Repository**:
-      Use the following command to clone the repository:
+     ```bash
+     git clone https://github.com/iamvikshan/materialyounewtab.git
+     ```
 
-       ```bash
-       git clone https://github.com/XengShi/materialYouNewTab.git
-       ```
+   - Alternatively, download the latest version as a ZIP file by clicking below:
 
-    - Alternatively, download the latest version as a ZIP file by clicking below:
+     [![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/iamvikshan/materialyounewtab/archive/refs/heads/main.zip)
 
-      [![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/XengShi/materialYouNewTab/archive/refs/heads/main.zip)
+   - You can also download the ZIP file by clicking on the Code button. On the repository page, look for a green button labeled **Code**. Click on the **Code** button, and in the dropdown menu, select **Download ZIP**.
 
-    - You can also download the ZIP file by clicking on the Code button. On the repository page, look for a green button labeled **Code**. Click on the **Code** button, and in the dropdown menu, select **Download ZIP**.
-
-2. **Stable Release** (v3.1)
+2. **Stable Release** (v1.0.0)
 
 <p align="center">
-    <a href="https://github.com/XengShi/materialYouNewTab/archive/refs/tags/v3.zip"><img src="https://img.shields.io/badge/GitHub-blue?style=for-the-badge&logo=github&logoColor=white&labelColor=grey&color=blue" alt="Download from GitHub" height="47" /></a>
-    <a href="https://chromewebstore.google.com/detail/material-you-newtab/glloabhodjfmeoccmdngmhkpmdlakfbn"><img src="https://github.com/user-attachments/assets/20a6e44b-fd46-4e6c-8ea6-aad436035753" alt="Download from Chrome Web Store" height="48" /></a>
+    <a href="https://github.com/iamvikshan/materialyounewtab/archive/refs/tags/v1.0.0.zip"><img src="https://img.shields.io/badge/GitHub-blue?style=for-the-badge&logo=github&logoColor=white&labelColor=grey&color=blue" alt="Download from GitHub" height="47" /></a>
+    <!-- <a href="https://chromewebstore.google.com/detail/material-you-newtab/glloabhodjfmeoccmdngmhkpmdlakfbn"><img src="https://github.com/user-attachments/assets/20a6e44b-fd46-4e6c-8ea6-aad436035753" alt="Download from Chrome Web Store" height="48" /></a>
     <a href="https://addons.mozilla.org/en-US/firefox/addon/material-you-newtab/"><img src="https://github.com/user-attachments/assets/c0e99e6b-97cf-4af2-9737-099db7d3538b" alt="Download from Mozilla Add-ons" height="48" /></a>
-    <!-- <a href="https://microsoftedge.microsoft.com/addons/detail/glloabhodjfmeoccmdngmhkpmdlakfbn"><img height="48" src="https://github.com/user-attachments/assets/204157eb-4cae-4c0e-b2cb-db514419fd9e" alt="Download from the Edge Add-ons" /></a> -->
+     <a href="https://microsoftedge.microsoft.com/addons/detail/glloabhodjfmeoccmdngmhkpmdlakfbn"><img height="48" src="https://github.com/user-attachments/assets/204157eb-4cae-4c0e-b2cb-db514419fd9e" alt="Download from the Edge Add-ons" /></a> -->
 </p>
 
 ---
@@ -81,21 +81,18 @@ Material You NewTab is a versatile browser extension that personalizes your New 
 
 #### ![Chromium](https://img.icons8.com/?size=20&id=104996&format=png&color=000000) Chromium-Based Browsers
 
-1. **Install from Chrome Web Store**:
+<!-- 1. **Install from Chrome Web Store**:
 
    - [Chrome Web Store link](https://chromewebstore.google.com/detail/material-you-newtab/glloabhodjfmeoccmdngmhkpmdlakfbn)
 
-   **Or** follow the manual steps below:
+   **Or** follow the manual steps below: -->
 
 2. **Manual Installation**:
-
    - **Prepare the Extension Folder**:
-
      - Ensure you’ve cloned the repository or downloaded the ZIP file and extracted it.
 
    - **Open Extensions Page**:
      Open your preferred browser and enter the following text in the address bar:
-
      - ![Chrome](https://img.icons8.com/color/20/000000/chrome--v1.png) Chrome: `chrome://extensions`
 
      - ![Edge](https://img.icons8.com/?size=20&id=dGm9KIZPpukc&format=png&color=000000) Edge: `edge://extensions`
@@ -105,22 +102,20 @@ Material You NewTab is a versatile browser extension that personalizes your New 
      - ![Opera](https://img.icons8.com/color/20/000000/opera--v1.png) Opera: `opera://extensions`
 
    - **Enable Developer Mode**:
-
      - Turn on **Developer Mode** in the extensions page.
 
    - **Load Unpacked Extension**:
      - Click on **Load unpacked** and select your extracted extension folder.
 
 3. **Additional Steps ONLY for ![Opera](https://img.icons8.com/color/20/000000/opera--v1.png) Opera (or ![Opera GX](https://img.icons8.com/color/20/000000/opera-gx.png) Opera GX)**:
-
    - Go to the **Settings** of Opera or Opera GX.
    - Scroll to the **On startup** section.
    - Click on **Open a specific page or set of pages** and then click on **Add a new page**.
    - Add the following to the **Site URL**:
 
-      ```text
-      chrome-extension://glloabhodjfmeoccmdngmhkpmdlakfbn/index.html
-      ```
+     ```text
+     chrome-extension://glloabhodjfmeoccmdngmhkpmdlakfbn/index.html
+     ```
 
 Below are screenshots of the process to guide you through each step visually.
 
@@ -132,17 +127,16 @@ Below are screenshots of the process to guide you through each step visually.
 
 #### ![Firefox](https://img.icons8.com/color/20/000000/firefox--v1.png) Firefox
 
-1. **Install from Mozilla Extensions Store**:
+<!-- 1. **Install from Mozilla Extensions Store**:
 
    - [Mozilla Add-ons link](https://addons.mozilla.org/en-US/firefox/addon/material-you-newtab/)
 
-<img src="https://i.postimg.cc/bPW2fHX7/FireFox.png" alt="Screenshot" width="569">
+<img src="https://i.postimg.cc/bPW2fHX7/FireFox.png" alt="Screenshot" width="569"> -->
 
 2. **Update the Homepage**:
-
    - Open Firefox and **obtain the UUID**:
-      - Hover over the New Tab button (next to the tab close button). A tooltip will display the extension's unique ID, which looks like this: `0f31e1c1-d63c-4660-b950-8bfbda3bb20a`. Copy or note this ID.
-      - Alternatively, type `about:debugging#/runtime/this-firefox` in the address bar and find the extension's UUID there.
+     - Hover over the New Tab button (next to the tab close button). A tooltip will display the extension's unique ID, which looks like this: `0f31e1c1-d63c-4660-b950-8bfbda3bb20a`. Copy or note this ID.
+     - Alternatively, type `about:debugging#/runtime/this-firefox` in the address bar and find the extension's UUID there.
    - Open **Settings** and navigate to **Home**, or type `about:preferences#home` in the address bar.
    - Under the **Homepage and new windows** section, select **Custom URLs...**.
    - Paste the following URL, replacing the ID with your actual UUID:
@@ -154,10 +148,8 @@ Below are screenshots of the process to guide you through each step visually.
    - This will update both your homepage and new tab to the extension.
 
 3. **Manual Installation (Temporary)**:
-
    - Clone the repository or download and extract the ZIP file.
    - **Prepare the Manifest**:
-
      - Delete the existing `manifest.json` file.
      - Rename `manifest(firefox).json` to `manifest.json`.
 
@@ -169,43 +161,43 @@ Below are screenshots of the process to guide you through each step visually.
 
 <!-- #### ![Safari](https://img.icons8.com/color/20/000000/safari--v1.png) Safari -->
 
-### Installation Video
+<!-- ### Installation Video
 
 For a step-by-step walkthrough, watch this [installation guide video](https://youtu.be/P4ryQPixfw8).
 
-[![Watch the video](https://img.youtube.com/vi/P4ryQPixfw8/0.jpg)](https://youtu.be/P4ryQPixfw8)
+[![Watch the video](https://img.youtube.com/vi/P4ryQPixfw8/0.jpg)](https://youtu.be/P4ryQPixfw8) -->
 
 ## 🌐 Currently Supported Languages (25)
 
-| Language                                                                                     | Code  | Translator(s)                                                                         |
-| -------------------------------------------------------------------------------------------- | :---: | ------------------------------------------------------------------------------------- |
-| <img src='https://flagcdn.com/us.svg' width=20> &nbsp; **English**                           |  en   | [XengShi](https://github.com/XengShi/), [Prem](https://github.com/prem-k-r/)          |
-| <img src='https://flagcdn.com/az.svg' width=20> &nbsp; **Azerbaijani** - Azərbaycanca        |  az   | [Hasan Bakhtiar](https://github.com/hasanbakhtiar/)                                   |
-| <img src='https://flagcdn.com/bd.svg' width=20> &nbsp; **Bangla** - বাংলা                     |  bn   | [It'z RJ](https://github.com/itz-rj-here/), [Prem](https://github.com/prem-k-r/)      |
-| <img src='https://flagcdn.com/cn.svg' width=20> &nbsp; **Chinese** (Simplified) - 简体中文    | zh-CN | [Guy Berryman](https://github.com/Guy-Berryman), [Tianli](https://github.com/TIANLI0) |
-| <img src='https://flagcdn.com/tw.svg' width=20> &nbsp; **Chinese** (Traditional) - 繁體中文   | zh-TW | [C. Y. Tseng](https://github.com/Eddie40802)                                          |
-| <img src='https://flagcdn.com/cz.svg' width=20> &nbsp; **Czech** - Čeština                   |  cz   | [Michal Šmahel](https://github.com/ceskyDJ/)                                          |
-| <img src='https://flagcdn.com/fr.svg' width=20> &nbsp; **French** - Français                 |  fr   | [422.io](https://github.com/iamwinner422)                                             |
-| <img src='https://flagcdn.com/de.svg' width=20> &nbsp; **German** - Deutsch                  |  de   | [Prem](https://github.com/prem-k-r/)(MTL)                                            |
-| <img src='https://flagcdn.com/in.svg' width=20> &nbsp; **Hindi** - हिंदी                       |  hi   | [XengShi](https://github.com/XengShi/), [Prem](https://github.com/prem-k-r/)          |
-| <img src='https://flagcdn.com/hu.svg' width=20> &nbsp; **Hungarian** - Magyar                |  hu   | [Zan1456](https://github.com/Zan1456/)                                                |
-| <img src='https://flagcdn.com/id.svg' width=20> &nbsp; **Indonesian** - Bahasa Indonesia     |  idn  | [Ayyas-RF](https://github.com/Ayyas-RF/)                                              |
-| <img src='https://flagcdn.com/it.svg' width=20> &nbsp; **Italian** - Italiano                |  it   | [Claudio Di Maio](https://github.com/ZiClaud/)                                        |
-| <img src='https://flagcdn.com/jp.svg' width=20> &nbsp; **Japanese** - 日本語                 |  ja   | [XengShi](https://github.com/XengShi/), [S-H-Y-A](https://github.com/S-H-Y-A/)        |
-| <img src='https://flagcdn.com/kr.svg' width=20> &nbsp; **Korean** - 한국어                   |  ko   | [XengShi](https://github.com/XengShi/)                                                |
-| <img src='https://flagcdn.com/in.svg' width=20> &nbsp; **Marathi** - मराठी                   |  mr   | [Prem](https://github.com/prem-k-r/), [Pratik Lokhande](https://github.com/konprtk)   |
-| <img src='https://flagcdn.com/np.svg' width=20> &nbsp; **Nepali** - नेपाली                    |  np   | [Bikash Shresha](https://github.com/sthaB-kash/)                                      |
-| <img src='https://flagcdn.com/ir.svg' width=20> &nbsp; **Persian** - فارسی                    |  fa   | [AMIRHOSSEIN](https://github.com/AMIRHOSSEIN-AHMADI-IR)                               |
-| <img src='https://flagcdn.com/br.svg' width=20> &nbsp; **Portuguese** - Português            | pt-BR | [Maycon Vitor Correa](https://github.com/MestreWalla/)                                |
-| <img src='https://flagcdn.com/ru.svg' width=20> &nbsp; **Russian** - Русский                 |  ru   | [giwi](https://github.com/giwih/)                                                     |
-| <img src='https://flagcdn.com/si.svg' width=20> &nbsp; **Slovenian** - Slovenščina           | sl-SI | [Linux-Alex](https://github.com/Linux-Alex/)                                          |
-| <img src='https://flagcdn.com/es.svg' width=20> &nbsp; **Spanish** - Español                 | es-ES | [XengShi](https://github.com/XengShi/)                                                |
-| <img src='https://flagcdn.com/tr.svg' width=20> &nbsp; **Turkish** - Türkçe                  |  tr   | [Nobody](https://github.com/Nobody9512), [Kerim Ölçer](https://github.com/kerimlcr)   |
-| <img src='https://flagcdn.com/pk.svg' width=20> &nbsp; **Urdu** - اردو                        |  ur   | [Asfandiyar Khan](https://github.com/asfand-dev)                                      |
-| <img src='https://flagcdn.com/uz.svg' width=20> &nbsp; **Uzbek** - O'zbek                    |  uz   | [Firdavs](https://github.com/Firdavs9512/)                                            |
-| <img src='https://flagcdn.com/vn.svg' width=20> &nbsp; **Vietnamese** - Tiếng Việt           |  vn   | [Diep](https://github.com/diepdo1810/), [Tuan](https://github.com/Tuan1-2-3)          |
+| Language                                                                                    | Code  | Translator(s)                                                                             |
+| ------------------------------------------------------------------------------------------- | :---: | ----------------------------------------------------------------------------------------- |
+| <img src='https://flagcdn.com/us.svg' width=20> &nbsp; **English**                          |  en   | [XengShi](https://github.com/XengShi/) (original), [Prem](https://github.com/prem-k-r/)   |
+| <img src='https://flagcdn.com/az.svg' width=20> &nbsp; **Azerbaijani** - Azərbaycanca       |  az   | [Hasan Bakhtiar](https://github.com/hasanbakhtiar/)                                       |
+| <img src='https://flagcdn.com/bd.svg' width=20> &nbsp; **Bangla** - বাংলা                   |  bn   | [It'z RJ](https://github.com/itz-rj-here/), [Prem](https://github.com/prem-k-r/)          |
+| <img src='https://flagcdn.com/cn.svg' width=20> &nbsp; **Chinese** (Simplified) - 简体中文  | zh-CN | [Guy Berryman](https://github.com/Guy-Berryman), [Tianli](https://github.com/TIANLI0)     |
+| <img src='https://flagcdn.com/tw.svg' width=20> &nbsp; **Chinese** (Traditional) - 繁體中文 | zh-TW | [C. Y. Tseng](https://github.com/Eddie40802)                                              |
+| <img src='https://flagcdn.com/cz.svg' width=20> &nbsp; **Czech** - Čeština                  |  cz   | [Michal Šmahel](https://github.com/ceskyDJ/)                                              |
+| <img src='https://flagcdn.com/fr.svg' width=20> &nbsp; **French** - Français                |  fr   | [422.io](https://github.com/iamwinner422)                                                 |
+| <img src='https://flagcdn.com/de.svg' width=20> &nbsp; **German** - Deutsch                 |  de   | [Prem](https://github.com/prem-k-r/)(MTL)                                                 |
+| <img src='https://flagcdn.com/in.svg' width=20> &nbsp; **Hindi** - हिंदी                    |  hi   | [XengShi](https://github.com/XengShi/) (original), [Prem](https://github.com/prem-k-r/)   |
+| <img src='https://flagcdn.com/hu.svg' width=20> &nbsp; **Hungarian** - Magyar               |  hu   | [Zan1456](https://github.com/Zan1456/)                                                    |
+| <img src='https://flagcdn.com/id.svg' width=20> &nbsp; **Indonesian** - Bahasa Indonesia    |  idn  | [Ayyas-RF](https://github.com/Ayyas-RF/)                                                  |
+| <img src='https://flagcdn.com/it.svg' width=20> &nbsp; **Italian** - Italiano               |  it   | [Claudio Di Maio](https://github.com/ZiClaud/)                                            |
+| <img src='https://flagcdn.com/jp.svg' width=20> &nbsp; **Japanese** - 日本語                |  ja   | [XengShi](https://github.com/XengShi/) (original), [S-H-Y-A](https://github.com/S-H-Y-A/) |
+| <img src='https://flagcdn.com/kr.svg' width=20> &nbsp; **Korean** - 한국어                  |  ko   | [XengShi](https://github.com/XengShi/) (original)                                         |
+| <img src='https://flagcdn.com/in.svg' width=20> &nbsp; **Marathi** - मराठी                  |  mr   | [Prem](https://github.com/prem-k-r/), [Pratik Lokhande](https://github.com/konprtk)       |
+| <img src='https://flagcdn.com/np.svg' width=20> &nbsp; **Nepali** - नेपाली                  |  np   | [Bikash Shresha](https://github.com/sthaB-kash/)                                          |
+| <img src='https://flagcdn.com/ir.svg' width=20> &nbsp; **Persian** - فارسی                  |  fa   | [AMIRHOSSEIN](https://github.com/AMIRHOSSEIN-AHMADI-IR)                                   |
+| <img src='https://flagcdn.com/br.svg' width=20> &nbsp; **Portuguese** - Português           | pt-BR | [Maycon Vitor Correa](https://github.com/MestreWalla/)                                    |
+| <img src='https://flagcdn.com/ru.svg' width=20> &nbsp; **Russian** - Русский                |  ru   | [giwi](https://github.com/giwih/)                                                         |
+| <img src='https://flagcdn.com/si.svg' width=20> &nbsp; **Slovenian** - Slovenščina          | sl-SI | [Linux-Alex](https://github.com/Linux-Alex/)                                              |
+| <img src='https://flagcdn.com/es.svg' width=20> &nbsp; **Spanish** - Español                | es-ES | [XengShi](https://github.com/XengShi/) (original)                                         |
+| <img src='https://flagcdn.com/tr.svg' width=20> &nbsp; **Turkish** - Türkçe                 |  tr   | [Nobody](https://github.com/Nobody9512), [Kerim Ölçer](https://github.com/kerimlcr)       |
+| <img src='https://flagcdn.com/pk.svg' width=20> &nbsp; **Urdu** - اردو                      |  ur   | [Asfandiyar Khan](https://github.com/asfand-dev)                                          |
+| <img src='https://flagcdn.com/uz.svg' width=20> &nbsp; **Uzbek** - O'zbek                   |  uz   | [Firdavs](https://github.com/Firdavs9512/)                                                |
+| <img src='https://flagcdn.com/vn.svg' width=20> &nbsp; **Vietnamese** - Tiếng Việt          |  vn   | [Diep](https://github.com/diepdo1810/), [Tuan](https://github.com/Tuan1-2-3)              |
 
-Check the [Translation Status Page](https://xengshi.github.io/materialYouNewTab/tools/languagesAnalysis.html) for an overview of completed languages and missing strings analysis.
+Check the [Translation Status Page](https://iamvikshan.github.io/materialyounewtab/tools/languagesAnalysis.html) for an overview of completed languages and missing strings analysis.
 
 <details>
 <summary><h2>📖 Usage</h2></summary>
@@ -286,27 +278,29 @@ Contributions are welcome! If you’d like to contribute:
 
 Here is the star history chart for the **Material You NewTab** repository. It shows the growth of stars over time, reflecting the increasing interest and support for the project.
 
-<a href="https://star-history.com/#XengShi/materialYouNewTab&Date">
+<a href="https://star-history.com/#iamvikshan/materialyounewtab&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=XengShi/materialYouNewTab&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=XengShi/materialYouNewTab&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=XengShi/materialYouNewTab&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=iamvikshan/materialyounewtab&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=iamvikshan/materialyounewtab&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=iamvikshan/materialyounewtab&type=Date" />
  </picture>
 </a>
 
 ## ❓ Issues and Support
 
-- If you encounter any issues or bugs, feel free to open an issue on [GitHub](https://github.com/XengShi/materialYouNewTab/issues).
+- If you encounter any issues or bugs, feel free to open an issue on [GitHub](https://github.com/iamvikshan/materialyounewtab/issues).
 - For general questions or support, you can contact the repository maintainers through the **Telegram group**: [Join here](https://t.me/+i-ekvlM7yoU1Yjc1).
 
 ## 🛡 Privacy Policy
 
-Material You NewTab respects your privacy. For more details, read our [Privacy Policy](https://xengshi.github.io/materialYouNewTab/privacy-policy.html).
+Material You NewTab respects your privacy. For more details, read our [Privacy Policy](https://iamvikshan.github.io/materialyounewtab/privacy-policy.html).
 
 ## 📜 License
 
-Copyright (C) 2023-2025 XengShi
+Copyright (C) 2023-2025 XengShi (original creator)
+Copyright (C) 2025 Vikshan (current maintainer)
 
-This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](https://github.com/XengShi/materialYouNewTab/blob/main/LICENSE) file for details.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0). See the [LICENSE](https://github.com/iamvikshan/materialyounewtab/blob/main/LICENSE) file for details.
 
-[GitHub](https://github.com/XengShi) &nbsp; [Telegram](https://t.me/xengshi) &nbsp; [Email](mailto:xengshi@outlook.com)
+**Original Creator:** [XengShi](https://github.com/XengShi) - Thank you for creating this amazing extension!
+**Current Maintainer:** [Vikshan](https://github.com/iamvikshan) &nbsp; [Email](mailto:vixshan@gmail.com)

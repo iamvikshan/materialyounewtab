@@ -1,0 +1,43 @@
+{
+  "name": "material-you-newtab",
+  "version": "1.0.0",
+  "description": "A Simple New Tab (browser's home page) inspired by Google's 'Material You' design.",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "build": "mkdir -p dist && cp -r scripts locales images svgs fonts favicon *.html *.css manifest*.json LICENSE README.md dist/ && cd dist && zip -r ../materialyounewtab-chrome.zip . -x 'manifest(firefox).json' && rm manifest.json && mv 'manifest(firefox).json' manifest.json && zip -r ../materialyounewtab-firefox.zip . && cd ..",
+    "clean": "rm -rf dist *.zip",
+    "release": "semantic-release"
+  },
+  "keywords": [
+    "browser-extension",
+    "new-tab",
+    "material-you",
+    "chrome-extension",
+    "firefox-addon"
+  ],
+  "author": "Vikshan <vixshan@gmail.com>",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamvikshan/materialyounewtab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iamvikshan/materialyounewtab/issues"
+  },
+  "homepage": "https://iamvikshan.github.io/materialyounewtab",
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^14.0.1",
+    "semantic-release": "^24.2.0",
+    "semantic-release-gitmoji": "^1.6.4"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+}

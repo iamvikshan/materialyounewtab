@@ -16,9 +16,8 @@
   },
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "./scripts/setup-canvas.sh && bun install",
+  "postCreateCommand": "apt-get update && apt-get install -y zip && bun install",
 
   // Set `remoteUser` to `root` to connect as root.
   "remoteUser": "root"
-
 }

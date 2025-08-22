@@ -1,12 +1,13 @@
 /*
  * Material You NewTab
- * Copyright (c) 2023-2025 XengShi
+ * Copyright (c) 2023-2025 XengShi (original creator)
+ * Copyright (c) 2025 Vikshan (current maintainer)
  * Licensed under the GNU General Public License v3.0 (GPL-3.0)
  * You should have received a copy of the GNU General Public License along with this program.
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Maximum number of shortcuts allowed
   const MAX_SHORTCUTS_ALLOWED = 50;
 
@@ -14,24 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const MIN_SHORTCUTS_ALLOWED = 1;
 
   // The new shortcut placeholder info
-  const PLACEHOLDER_SHORTCUT_NAME = "";
-  const PLACEHOLDER_SHORTCUT_URL = "";
+  const PLACEHOLDER_SHORTCUT_NAME = '';
+  const PLACEHOLDER_SHORTCUT_URL = '';
 
   // The placeholder for an empty shortcut
-  const SHORTCUT_NAME_PLACEHOLDER = "Shortcut Name";
-  const SHORTCUT_URL_PLACEHOLDER = "URL (e.g., example.com)";
+  const SHORTCUT_NAME_PLACEHOLDER = 'Shortcut Name';
+  const SHORTCUT_URL_PLACEHOLDER = 'URL (e.g., example.com)';
 
   const SHORTCUT_PRESET_NAMES = [
-    "Youtube",
-    "Gmail",
-    "Telegram",
-    "WhatsApp",
-    "Twitter",
-    "Discord",
+    'Youtube',
+    'Gmail',
+    'Telegram',
+    'WhatsApp',
+    'Twitter',
+    'Discord',
   ];
   const SHORTCUT_PRESET_URLS_AND_LOGOS = new Map([
     [
-      "youtube.com",
+      'youtube.com',
       `
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="12" class="accentColor shorcutDarkColor"/>
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `,
     ],
     [
-      "mail.google.com",
+      'mail.google.com',
       `
             <svg fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 	            <circle cx="12" cy="12" r="12" class="accentColor shorcutDarkColor"/>
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `,
     ],
     [
-      "web.telegram.org",
+      'web.telegram.org',
       `
             <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                 <path class="accentColor shorcutDarkColor"
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `,
     ],
     [
-      "web.whatsapp.com",
+      'web.whatsapp.com',
       `
             <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                 <path class="accentColor shorcutDarkColor"
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `,
     ],
     [
-      "x.com",
+      'x.com',
       `
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="12" class="accentColor shorcutDarkColor"/>
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
   `,
     ],
     [
-      "discord.com/app",
+      'discord.com/app',
       `
             <svg fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="12" r="12" class="accentColor shorcutDarkColor"/>
@@ -99,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `,
     ],
     [
-      "instagram.com",
+      'instagram.com',
       `
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="12" class="accentColor shorcutDarkColor"/>
@@ -111,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
   `,
     ],
     [
-      "twitch.tv",
+      'twitch.tv',
       `
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="12" class="accentColor shorcutDarkColor"/>
@@ -139,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //     `https://${hostname}/apple-touch-icon.png`
   // ];
 
-  const GOOGLE_FAVICON_API_FALLBACK = (hostname) =>
+  const GOOGLE_FAVICON_API_FALLBACK = hostname =>
     `https://s2.googleusercontent.com/s2/favicons?domain_url=https://${hostname}&sz=256`;
 
   // const FAVICON_REQUEST_TIMEOUT = 5000;
@@ -153,16 +154,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ------ Element selectors ------ */
 
-  const shortcuts = document.getElementById("shortcuts-section");
-  const shortcutsCheckbox = document.getElementById("shortcutsCheckbox");
-  const shortcutEditField = document.getElementById("shortcutEditField");
-  const adaptiveIconField = document.getElementById("adaptiveIconField");
-  const adaptiveIconToggle = document.getElementById("adaptiveIconToggle");
-  const shortcutSettingsContainer = document.getElementById("shortcutList"); // shortcuts in settings
-  const shortcutsContainer = document.getElementById("shortcutsContainer"); // shortcuts in page
-  const newShortcutButton = document.getElementById("newShortcutButton");
-  const resetShortcutsButton = document.getElementById("resetButton");
-  const iconStyle = document.getElementById("iconStyle");
+  const shortcuts = document.getElementById('shortcuts-section');
+  const shortcutsCheckbox = document.getElementById('shortcutsCheckbox');
+  const shortcutEditField = document.getElementById('shortcutEditField');
+  const adaptiveIconField = document.getElementById('adaptiveIconField');
+  const adaptiveIconToggle = document.getElementById('adaptiveIconToggle');
+  const shortcutSettingsContainer = document.getElementById('shortcutList'); // shortcuts in settings
+  const shortcutsContainer = document.getElementById('shortcutsContainer'); // shortcuts in page
+  const newShortcutButton = document.getElementById('newShortcutButton');
+  const resetShortcutsButton = document.getElementById('resetButton');
+  const iconStyle = document.getElementById('iconStyle');
 
   // const flexMonitor = document.getElementById("flexMonitor"); // monitors whether shortcuts have flex-wrap flexed
   // const defaultHeight = document.getElementById("defaultMonitor").clientHeight; // used to compare to previous element
@@ -177,31 +178,31 @@ document.addEventListener("DOMContentLoaded", function () {
    * container.
    */
   function loadShortcuts() {
-    let amount = localStorage.getItem("shortcutAmount");
+    let amount = localStorage.getItem('shortcutAmount');
 
     const presetAmount = SHORTCUT_PRESET_NAMES.length;
 
     if (amount === null) {
       // first time opening
       amount = presetAmount;
-      localStorage.setItem("shortcutAmount", amount.toString());
+      localStorage.setItem('shortcutAmount', amount.toString());
     } else {
       amount = parseInt(amount);
     }
 
     // If we are not allowed to add more shortcuts.
     if (amount >= MAX_SHORTCUTS_ALLOWED)
-      newShortcutButton.className = "inactive";
+      newShortcutButton.className = 'inactive';
 
     // If we are not allowed to delete anymore, all delete buttons should be deactivated.
     const deleteInactive = amount <= MIN_SHORTCUTS_ALLOWED;
 
     for (let i = 0; i < amount; i++) {
       const name =
-        localStorage.getItem("shortcutName" + i.toString()) ||
+        localStorage.getItem('shortcutName' + i.toString()) ||
         SHORTCUT_PRESET_NAMES[i];
       const url =
-        localStorage.getItem("shortcutURL" + i.toString()) ||
+        localStorage.getItem('shortcutURL' + i.toString()) ||
         [...SHORTCUT_PRESET_URLS_AND_LOGOS.keys()][i];
 
       const newSettingsEntry = createShortcutSettingsEntry(
@@ -231,36 +232,36 @@ document.addEventListener("DOMContentLoaded", function () {
    * @returns {HTMLDivElement} The div to be used in the settings
    */
   function createShortcutSettingsEntry(name, url, deleteInactive, i) {
-    const deleteButtonContainer = document.createElement("div");
-    deleteButtonContainer.className = "delete";
+    const deleteButtonContainer = document.createElement('div');
+    deleteButtonContainer.className = 'delete';
     deleteButtonContainer.innerHTML = SHORTCUT_DELETE_BUTTON_HTML;
 
     const deleteButton = deleteButtonContainer.children[0];
-    if (deleteInactive) deleteButton.className = "inactive";
-    deleteButton.addEventListener("click", (e) =>
-      deleteShortcut(e.target.closest(".shortcutSettingsEntry"))
+    if (deleteInactive) deleteButton.className = 'inactive';
+    deleteButton.addEventListener('click', e =>
+      deleteShortcut(e.target.closest('.shortcutSettingsEntry'))
     );
 
-    const shortcutName = document.createElement("input");
-    shortcutName.className = "shortcutName";
+    const shortcutName = document.createElement('input');
+    shortcutName.className = 'shortcutName';
     shortcutName.placeholder = SHORTCUT_NAME_PLACEHOLDER;
     shortcutName.value = name;
-    const shortcutUrl = document.createElement("input");
-    shortcutUrl.className = "URL";
+    const shortcutUrl = document.createElement('input');
+    shortcutUrl.className = 'URL';
     shortcutUrl.placeholder = SHORTCUT_URL_PLACEHOLDER;
     shortcutUrl.value = url;
 
-    const dragHandle = document.createElement("div");
-    dragHandle.className = "drag-handle";
+    const dragHandle = document.createElement('div');
+    dragHandle.className = 'drag-handle';
     dragHandle.innerHTML = SHORTCUT_REORDER_HANDLE_HTML;
 
     attachEventListenersToInputs([shortcutName, shortcutUrl]);
 
-    const textDiv = document.createElement("div");
+    const textDiv = document.createElement('div');
     textDiv.append(shortcutName, shortcutUrl);
 
-    const entryDiv = document.createElement("div");
-    entryDiv.className = "shortcutSettingsEntry";
+    const entryDiv = document.createElement('div');
+    entryDiv.className = 'shortcutSettingsEntry';
     entryDiv.append(dragHandle, textDiv, deleteButtonContainer);
 
     entryDiv._index = i;
@@ -276,11 +277,11 @@ document.addEventListener("DOMContentLoaded", function () {
    * @param i The index of the shortcut
    */
   function createShortcutElement(shortcutName, shortcutUrl, i) {
-    const shortcut = document.createElement("a");
+    const shortcut = document.createElement('a');
     shortcut.href = shortcutUrl;
 
-    const name = document.createElement("span");
-    name.className = "shortcut-name";
+    const name = document.createElement('span');
+    name.className = 'shortcut-name';
     name.textContent = shortcutName;
 
     let icon = getCustomLogo(shortcutUrl);
@@ -291,14 +292,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // getBestIconUrl(shortcutUrl).then((iconUrl) => icon.src = iconUrl).catch();
     }
 
-    const iconContainer = document.createElement("div");
-    iconContainer.className = "shortcutLogoContainer";
+    const iconContainer = document.createElement('div');
+    iconContainer.className = 'shortcutLogoContainer';
     iconContainer.appendChild(icon);
 
     shortcut.append(iconContainer, name);
 
-    const shortcutContainer = document.createElement("div");
-    shortcutContainer.className = "shortcuts";
+    const shortcutContainer = document.createElement('div');
+    shortcutContainer.className = 'shortcuts';
     shortcutContainer.appendChild(shortcut);
     shortcutContainer._index = i;
 
@@ -318,23 +319,23 @@ document.addEventListener("DOMContentLoaded", function () {
    * @param inputs a list of the two inputs these listeners should be applied to.
    */
   function attachEventListenersToInputs(inputs) {
-    inputs.forEach((input) => {
+    inputs.forEach(input => {
       // save and apply when done
-      input.addEventListener("blur", (e) => {
-        const shortcut = e.target.closest(".shortcutSettingsEntry");
+      input.addEventListener('blur', e => {
+        const shortcut = e.target.closest('.shortcutSettingsEntry');
         saveShortcut(shortcut);
         applyShortcut(shortcut);
       });
       // select all content on click:
-      input.addEventListener("focus", (e) => e.target.select());
+      input.addEventListener('focus', e => e.target.select());
     });
-    inputs[0].addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
+    inputs[0].addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
         inputs[1].focus(); // Move focus to the URL
       }
     });
-    inputs[1].addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
+    inputs[1].addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
         e.target.blur(); // Blur the input field
       }
     });
@@ -347,11 +348,11 @@ document.addEventListener("DOMContentLoaded", function () {
    * @param shortcut The shortcut to be saved
    */
   function saveShortcut(shortcut) {
-    const name = shortcut.querySelector("input.shortcutName").value;
-    const url = shortcut.querySelector("input.URL").value;
+    const name = shortcut.querySelector('input.shortcutName').value;
+    const url = shortcut.querySelector('input.URL').value;
 
-    localStorage.setItem("shortcutName" + shortcut._index, name);
-    localStorage.setItem("shortcutURL" + shortcut._index, url);
+    localStorage.setItem('shortcutName' + shortcut._index, name);
+    localStorage.setItem('shortcutURL' + shortcut._index, url);
   }
 
   /**
@@ -360,14 +361,14 @@ document.addEventListener("DOMContentLoaded", function () {
    * @param shortcut The shortcut to be applied.
    */
   function applyShortcut(shortcut) {
-    const shortcutName = shortcut.querySelector("input.shortcutName").value;
-    let url = shortcut.querySelector("input.URL").value.trim();
+    const shortcutName = shortcut.querySelector('input.shortcutName').value;
+    let url = shortcut.querySelector('input.URL').value.trim();
 
     // Normalize and encode URL
     const normalizedUrl = encodeURI(
-      url.startsWith("https://") || url.startsWith("http://")
+      url.startsWith('https://') || url.startsWith('http://')
         ? url
-        : "https://" + url
+        : 'https://' + url
     );
 
     const i = shortcut._index;
@@ -393,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
    * This function creates a new shortcut in the settings panel, then saves and applies it.
    */
   function newShortcut() {
-    const currentAmount = parseInt(localStorage.getItem("shortcutAmount"));
+    const currentAmount = parseInt(localStorage.getItem('shortcutAmount'));
     const newAmount = currentAmount + 1;
 
     if (newAmount > MAX_SHORTCUTS_ALLOWED) return;
@@ -401,16 +402,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // If the delete buttons were deactivated, reactivate them.
     if (currentAmount === MIN_SHORTCUTS_ALLOWED) {
       shortcutSettingsContainer
-        .querySelectorAll(".delete button.inactive")
-        .forEach((b) => b.classList.remove("inactive"));
+        .querySelectorAll('.delete button.inactive')
+        .forEach(b => b.classList.remove('inactive'));
     }
 
     // If we have reached the max, deactivate the add button.
     if (newAmount === MAX_SHORTCUTS_ALLOWED)
-      newShortcutButton.className = "inactive";
+      newShortcutButton.className = 'inactive';
 
     // Save the new amount
-    localStorage.setItem("shortcutAmount", newAmount.toString());
+    localStorage.setItem('shortcutAmount', newAmount.toString());
 
     // create placeholder div
     const shortcut = createShortcutSettingsEntry(
@@ -432,13 +433,13 @@ document.addEventListener("DOMContentLoaded", function () {
    * @param shortcut The shortcut to be deleted.
    */
   function deleteShortcut(shortcut) {
-    const newAmount = (localStorage.getItem("shortcutAmount") || 0) - 1;
+    const newAmount = (localStorage.getItem('shortcutAmount') || 0) - 1;
     if (newAmount < MIN_SHORTCUTS_ALLOWED) return;
 
     const i = shortcut._index;
 
     // If we had previously deactivated it, reactivate the add button
-    newShortcutButton.classList.remove("inactive");
+    newShortcutButton.classList.remove('inactive');
 
     // Remove the shortcut from the DOM
     shortcut.remove();
@@ -452,18 +453,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Remove the last shortcut from storage, as it has now moved up
-    localStorage.removeItem("shortcutName" + newAmount);
-    localStorage.removeItem("shortcutURL" + newAmount);
+    localStorage.removeItem('shortcutName' + newAmount);
+    localStorage.removeItem('shortcutURL' + newAmount);
 
     // Disable delete buttons if minimum number reached
     if (newAmount === MIN_SHORTCUTS_ALLOWED) {
       shortcutSettingsContainer
-        .querySelectorAll(".delete button")
-        .forEach((button) => (button.className = "inactive"));
+        .querySelectorAll('.delete button')
+        .forEach(button => (button.className = 'inactive'));
     }
 
     // Update the shortcutAmount in localStorage
-    localStorage.setItem("shortcutAmount", newAmount.toString());
+    localStorage.setItem('shortcutAmount', newAmount.toString());
   }
 
   /**
@@ -472,13 +473,13 @@ document.addEventListener("DOMContentLoaded", function () {
    * It does this by deleting all shortcut-related data, then reloading the shortcuts.
    */
   function resetShortcuts() {
-    for (let i = 0; i < (localStorage.getItem("shortcutAmount") || 0); i++) {
-      localStorage.removeItem("shortcutName" + i);
-      localStorage.removeItem("shortcutURL" + i);
+    for (let i = 0; i < (localStorage.getItem('shortcutAmount') || 0); i++) {
+      localStorage.removeItem('shortcutName' + i);
+      localStorage.removeItem('shortcutURL' + i);
     }
-    shortcutSettingsContainer.innerHTML = "";
-    shortcutsContainer.innerHTML = "";
-    localStorage.removeItem("shortcutAmount");
+    shortcutSettingsContainer.innerHTML = '';
+    shortcutsContainer.innerHTML = '';
+    localStorage.removeItem('shortcutAmount');
     loadShortcuts();
   }
 
@@ -541,17 +542,17 @@ document.addEventListener("DOMContentLoaded", function () {
    * @returns {HTMLImageElement} The img element representing the favicon
    */
   function getFallbackFavicon(urlString) {
-    const logo = document.createElement("img");
+    const logo = document.createElement('img');
     const hostname = new URL(urlString).hostname;
 
-    if (hostname === "github.com") {
-      logo.src = "./svgs/shortcuts_icons/github-shortcut.svg";
+    if (hostname === 'github.com') {
+      logo.src = './svgs/shortcuts_icons/github-shortcut.svg';
     } else {
       logo.src = GOOGLE_FAVICON_API_FALLBACK(hostname);
 
       // Handle image loading error on offline scenario
       logo.onerror = () => {
-        logo.src = "./svgs/shortcuts_icons/offline.svg";
+        logo.src = './svgs/shortcuts_icons/offline.svg';
       };
     }
 
@@ -566,61 +567,61 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   function getCustomLogo(url) {
     const logoHtml = SHORTCUT_PRESET_URLS_AND_LOGOS.get(
-      url.replace("https://", "")
+      url.replace('https://', '')
     );
     if (!logoHtml) return null;
 
-    const template = document.createElement("template");
+    const template = document.createElement('template');
     template.innerHTML = logoHtml.trim();
     return template.content.firstElementChild;
   }
 
   /* ------ Event Listeners ------ */
-  shortcutsCheckbox.addEventListener("change", function () {
-    saveCheckboxState("shortcutsCheckboxState", shortcutsCheckbox);
+  shortcutsCheckbox.addEventListener('change', function () {
+    saveCheckboxState('shortcutsCheckboxState', shortcutsCheckbox);
     if (shortcutsCheckbox.checked) {
-      shortcuts.style.display = "flex";
-      saveDisplayStatus("shortcutsDisplayStatus", "flex");
-      shortcutEditField.classList.remove("inactive");
-      saveActiveStatus("shortcutEditField", "active");
-      adaptiveIconField.classList.remove("inactive");
-      saveActiveStatus("adaptiveIconField", "active");
+      shortcuts.style.display = 'flex';
+      saveDisplayStatus('shortcutsDisplayStatus', 'flex');
+      shortcutEditField.classList.remove('inactive');
+      saveActiveStatus('shortcutEditField', 'active');
+      adaptiveIconField.classList.remove('inactive');
+      saveActiveStatus('adaptiveIconField', 'active');
     } else {
-      shortcuts.style.display = "none";
-      saveDisplayStatus("shortcutsDisplayStatus", "none");
-      shortcutEditField.classList.add("inactive");
-      saveActiveStatus("shortcutEditField", "inactive");
-      adaptiveIconField.classList.add("inactive");
-      saveActiveStatus("adaptiveIconField", "inactive");
+      shortcuts.style.display = 'none';
+      saveDisplayStatus('shortcutsDisplayStatus', 'none');
+      shortcutEditField.classList.add('inactive');
+      saveActiveStatus('shortcutEditField', 'inactive');
+      adaptiveIconField.classList.add('inactive');
+      saveActiveStatus('adaptiveIconField', 'inactive');
     }
   });
 
   // Load checkbox state
-  loadCheckboxState("adaptiveIconToggle", adaptiveIconToggle);
+  loadCheckboxState('adaptiveIconToggle', adaptiveIconToggle);
   // Apply CSS based on initial state
   document.head.appendChild(iconStyle);
-  iconStyle.textContent = adaptiveIconToggle.checked ? ADAPTIVE_ICON_CSS : "";
+  iconStyle.textContent = adaptiveIconToggle.checked ? ADAPTIVE_ICON_CSS : '';
 
   // Add event listener for checkbox
-  adaptiveIconToggle.addEventListener("change", function () {
-    saveCheckboxState("adaptiveIconToggle", adaptiveIconToggle);
+  adaptiveIconToggle.addEventListener('change', function () {
+    saveCheckboxState('adaptiveIconToggle', adaptiveIconToggle);
     if (adaptiveIconToggle.checked) {
       iconStyle.textContent = ADAPTIVE_ICON_CSS;
     } else {
-      iconStyle.textContent = "";
+      iconStyle.textContent = '';
     }
   });
 
   let focusTimeoutId;
-  newShortcutButton.addEventListener("click", () => {
+  newShortcutButton.addEventListener('click', () => {
     newShortcut();
 
     // Scroll to the new shortcut and focus on the URL input
-    const allEntries = document.querySelectorAll(".shortcutSettingsEntry");
+    const allEntries = document.querySelectorAll('.shortcutSettingsEntry');
     const lastEntry = allEntries[allEntries.length - 1];
-    const urlInput = lastEntry.querySelector("input.URL");
+    const urlInput = lastEntry.querySelector('input.URL');
 
-    urlInput.scrollIntoView({ behavior: "smooth", block: "center" });
+    urlInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
     clearTimeout(focusTimeoutId);
     focusTimeoutId = setTimeout(() => {
@@ -628,31 +629,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 800);
   });
 
-  resetShortcutsButton.addEventListener("click", () => {
+  resetShortcutsButton.addEventListener('click', () => {
     resetShortcuts();
 
     // If newShortcutButton was previously inactive, reactivate it
-    if (newShortcutButton.classList.contains("inactive")) {
-      newShortcutButton.classList.remove("inactive");
+    if (newShortcutButton.classList.contains('inactive')) {
+      newShortcutButton.classList.remove('inactive');
     }
 
     // Animate the reset button
-    const svgElement = resetShortcutsButton.querySelector("svg");
-    svgElement.classList.toggle("rotateResetButton");
+    const svgElement = resetShortcutsButton.querySelector('svg');
+    svgElement.classList.toggle('rotateResetButton');
     setTimeout(() => {
-      svgElement.classList.remove("rotateResetButton");
+      svgElement.classList.remove('rotateResetButton');
     }, 300);
   });
 
   // Load and apply the saved checkbox states and display statuses
-  loadCheckboxState("shortcutsCheckboxState", shortcutsCheckbox);
-  loadActiveStatus("shortcutEditField", shortcutEditField);
-  loadActiveStatus("adaptiveIconField", adaptiveIconField);
-  loadDisplayStatus("shortcutsDisplayStatus", shortcuts);
+  loadCheckboxState('shortcutsCheckboxState', shortcutsCheckbox);
+  loadActiveStatus('shortcutEditField', shortcutEditField);
+  loadActiveStatus('adaptiveIconField', adaptiveIconField);
+  loadDisplayStatus('shortcutsDisplayStatus', shortcuts);
   loadShortcuts();
 
   new Sortable(shortcutSettingsContainer, {
-    handle: ".drag-handle",
+    handle: '.drag-handle',
     animation: 150,
     onEnd: function () {
       const entries = Array.from(shortcutSettingsContainer.children);
@@ -661,11 +662,11 @@ document.addEventListener("DOMContentLoaded", function () {
         saveShortcut(entry);
       });
 
-      localStorage.setItem("shortcutAmount", entries.length);
-      shortcutsContainer.innerHTML = "";
+      localStorage.setItem('shortcutAmount', entries.length);
+      shortcutsContainer.innerHTML = '';
       entries.forEach(applyShortcut);
     },
   });
 
-  console.log("Sortable initialized");
+  console.log('Sortable initialized');
 });

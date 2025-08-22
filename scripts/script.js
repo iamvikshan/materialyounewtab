@@ -1,12 +1,13 @@
 /*
  * Material You NewTab
- * Copyright (c) 2023-2025 XengShi
+ * Copyright (c) 2023-2025 XengShi (original creator)
+ * Copyright (c) 2025 Vikshan (current maintainer)
  * Licensed under the GNU General Public License v3.0 (GPL-3.0)
  * You should have received a copy of the GNU General Public License along with this program.
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // -----Theme stay changed even if user reload the page---
   //  🔴🟠🟡🟢🔵🟣⚫️⚪️🟤
   const storedTheme = localStorage.getItem(themeStorageKey);
@@ -21,138 +22,138 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Remove Loading Screen When the DOM and the Theme has Loaded
-  document.getElementById("LoadingScreen").style.display = "none";
+  document.getElementById('LoadingScreen').style.display = 'none';
 
   // Add theme transition class after a short delay
   setTimeout(() => {
-    document.documentElement.classList.add("theme-transition");
+    document.documentElement.classList.add('theme-transition');
 
     // Remove font family property after transition is established
     setTimeout(() => {
-      const element = document.querySelector(".theme-transition");
+      const element = document.querySelector('.theme-transition');
       if (element) {
-        element.style.removeProperty("--main-font-family");
+        element.style.removeProperty('--main-font-family');
       }
     }, 1);
   }, 25);
 });
 
 // Function to apply the selected theme
-const radioButtons = document.querySelectorAll(".colorPlate");
-const themeStorageKey = "selectedTheme";
+const radioButtons = document.querySelectorAll('.colorPlate');
+const themeStorageKey = 'selectedTheme';
 const storedTheme = localStorage.getItem(themeStorageKey);
-const customThemeStorageKey = "customThemeColor"; // For color picker
+const customThemeStorageKey = 'customThemeColor'; // For color picker
 const storedCustomColor = localStorage.getItem(customThemeStorageKey);
 
 const resetDarkTheme = () => {
   // Remove the dark theme class
-  document.documentElement.classList.remove("dark-theme");
+  document.documentElement.classList.remove('dark-theme');
 
   // Reset inline styles that were applied specifically for dark mode
   const resetElements = [
-    "searchQ",
-    "searchIconDark",
-    "darkFeelsLikeIcon",
-    "menuButton",
-    "menuCloseButton",
-    "closeBtnX",
+    'searchQ',
+    'searchIconDark',
+    'darkFeelsLikeIcon',
+    'menuButton',
+    'menuCloseButton',
+    'closeBtnX',
   ];
 
-  resetElements.forEach((id) => {
+  resetElements.forEach(id => {
     const element = document.getElementById(id);
     if (element) {
-      element.removeAttribute("style");
+      element.removeAttribute('style');
     }
   });
 
   // Reset fill color for elements with the class "accentColor"
-  const accentElements = document.querySelectorAll(".accentColor");
-  accentElements.forEach((element) => {
-    element.style.fill = ""; // Reset fill color
+  const accentElements = document.querySelectorAll('.accentColor');
+  accentElements.forEach(element => {
+    element.style.fill = ''; // Reset fill color
   });
 };
 
-const applySelectedTheme = (colorValue) => {
-  if (colorValue !== "dark") {
+const applySelectedTheme = colorValue => {
+  if (colorValue !== 'dark') {
     resetDarkTheme();
 
-    if (colorValue === "blue") {
-      document.documentElement.style.setProperty("--bg-color-blue", "#BBD6FD");
+    if (colorValue === 'blue') {
+      document.documentElement.style.setProperty('--bg-color-blue', '#BBD6FD');
       document.documentElement.style.setProperty(
-        "--accentLightTint-blue",
-        "#E2EEFF"
+        '--accentLightTint-blue',
+        '#E2EEFF'
       );
       document.documentElement.style.setProperty(
-        "--darkerColor-blue",
-        "#3569b2"
+        '--darkerColor-blue',
+        '#3569b2'
       );
-      document.documentElement.style.setProperty("--darkColor-blue", "#4382EC");
+      document.documentElement.style.setProperty('--darkColor-blue', '#4382EC');
       document.documentElement.style.setProperty(
-        "--textColorDark-blue",
-        "#1b3041"
+        '--textColorDark-blue',
+        '#1b3041'
       );
       document.documentElement.style.setProperty(
-        "--whitishColor-blue",
-        "#ffffff"
+        '--whitishColor-blue',
+        '#ffffff'
       );
     } else {
       document.documentElement.style.setProperty(
-        "--bg-color-blue",
+        '--bg-color-blue',
         `var(--bg-color-${colorValue})`
       );
       document.documentElement.style.setProperty(
-        "--accentLightTint-blue",
+        '--accentLightTint-blue',
         `var(--accentLightTint-${colorValue})`
       );
       document.documentElement.style.setProperty(
-        "--darkerColor-blue",
+        '--darkerColor-blue',
         `var(--darkerColor-${colorValue})`
       );
       document.documentElement.style.setProperty(
-        "--darkColor-blue",
+        '--darkColor-blue',
         `var(--darkColor-${colorValue})`
       );
       document.documentElement.style.setProperty(
-        "--textColorDark-blue",
+        '--textColorDark-blue',
         `var(--textColorDark-${colorValue})`
       );
       document.documentElement.style.setProperty(
-        "--whitishColor-blue",
+        '--whitishColor-blue',
         `var(--whitishColor-${colorValue})`
       );
     }
   }
 
   // If the selected theme is dark
-  else if (colorValue === "dark") {
+  else if (colorValue === 'dark') {
     document.documentElement.style.setProperty(
-      "--bg-color-blue",
+      '--bg-color-blue',
       `var(--bg-color-${colorValue})`
     );
     document.documentElement.style.setProperty(
-      "--accentLightTint-blue",
+      '--accentLightTint-blue',
       `var(--accentLightTint-${colorValue})`
     );
     document.documentElement.style.setProperty(
-      "--darkerColor-blue",
+      '--darkerColor-blue',
       `var(--darkerColor-${colorValue})`
     );
     document.documentElement.style.setProperty(
-      "--darkColor-blue",
+      '--darkColor-blue',
       `var(--darkColor-${colorValue})`
     );
     document.documentElement.style.setProperty(
-      "--textColorDark-blue",
+      '--textColorDark-blue',
       `var(--textColorDark-${colorValue})`
     );
 
     // Apply dark theme class
-    document.documentElement.classList.add("dark-theme");
+    document.documentElement.classList.add('dark-theme');
 
     // Change fill color for elements with the class "accentColor"
-    const accentElements = document.querySelectorAll(".accentColor");
-    accentElements.forEach((element) => {
-      element.style.fill = "#212121";
+    const accentElements = document.querySelectorAll('.accentColor');
+    accentElements.forEach(element => {
+      element.style.fill = '#212121';
     });
   }
 
@@ -163,7 +164,7 @@ const applySelectedTheme = (colorValue) => {
 function changeFaviconColor() {
   // Fetch colors from CSS variables
   const rootStyles = getComputedStyle(document.documentElement);
-  const darkColor = rootStyles.getPropertyValue("--darkColor-blue");
+  const darkColor = rootStyles.getPropertyValue('--darkColor-blue');
   //const bgColor = rootStyles.getPropertyValue("--bg-color-blue");
 
   const svg = `
@@ -172,21 +173,21 @@ function changeFaviconColor() {
             d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1" />
     </svg>
     `;
-  const encodedSvg = "data:image/svg+xml," + encodeURIComponent(svg);
-  const favicon = document.getElementById("favicon");
+  const encodedSvg = 'data:image/svg+xml,' + encodeURIComponent(svg);
+  const favicon = document.getElementById('favicon');
   favicon.href = encodedSvg;
-  favicon.setAttribute("type", "image/svg+xml");
+  favicon.setAttribute('type', 'image/svg+xml');
 }
 changeFaviconColor();
 
 // ----Color Picker || ColorPicker----
 function adjustHexColor(hex, factor, isLighten = true) {
-  hex = hex.replace("#", "");
+  hex = hex.replace('#', '');
   if (hex.length === 3) {
     hex = hex
-      .split("")
-      .map((c) => c + c)
-      .join("");
+      .split('')
+      .map(c => c + c)
+      .join('');
   }
   let r = parseInt(hex.substring(0, 2), 16);
   let g = parseInt(hex.substring(2, 4), 16);
@@ -207,15 +208,15 @@ function adjustHexColor(hex, factor, isLighten = true) {
 }
 
 function isNearWhite(hex, threshold = 240) {
-  hex = hex.replace("#", "");
+  hex = hex.replace('#', '');
   const r = parseInt(hex.substring(0, 2), 16);
   const g = parseInt(hex.substring(2, 4), 16);
   const b = parseInt(hex.substring(4, 6), 16);
   return r > threshold && g > threshold && b > threshold;
 }
 
-const applyCustomTheme = (color) => {
-  let adjustedColor = isNearWhite(color) ? "#696969" : color;
+const applyCustomTheme = color => {
+  let adjustedColor = isNearWhite(color) ? '#696969' : color;
 
   const lighterColorHex = adjustHexColor(adjustedColor, 0.7);
   const lightTin = adjustHexColor(adjustedColor, 0.9);
@@ -223,32 +224,32 @@ const applyCustomTheme = (color) => {
   const darkTextColor = adjustHexColor(adjustedColor, 0.8, false);
 
   document.documentElement.style.setProperty(
-    "--bg-color-blue",
+    '--bg-color-blue',
     lighterColorHex
   );
   document.documentElement.style.setProperty(
-    "--accentLightTint-blue",
+    '--accentLightTint-blue',
     lightTin
   );
   document.documentElement.style.setProperty(
-    "--darkerColor-blue",
+    '--darkerColor-blue',
     darkerColorHex
   );
-  document.documentElement.style.setProperty("--darkColor-blue", adjustedColor);
+  document.documentElement.style.setProperty('--darkColor-blue', adjustedColor);
   document.documentElement.style.setProperty(
-    "--textColorDark-blue",
+    '--textColorDark-blue',
     darkTextColor
   );
-  document.documentElement.style.setProperty("--whitishColor-blue", "#ffffff");
-  document.getElementById("rangColor").style.borderColor = color;
-  document.getElementById("dfChecked").checked = false;
+  document.documentElement.style.setProperty('--whitishColor-blue', '#ffffff');
+  document.getElementById('rangColor').style.borderColor = color;
+  document.getElementById('dfChecked').checked = false;
 
   changeFaviconColor();
   ApplyLoadingColor();
 };
 
 // Load theme on page reload
-window.addEventListener("load", function () {
+window.addEventListener('load', function () {
   if (storedTheme) {
     applySelectedTheme(storedTheme);
   } else if (storedCustomColor) {
@@ -267,9 +268,9 @@ const handleThemeChange = function () {
 };
 
 // Remove any previously attached listeners and add only one
-radioButtons.forEach((radioButton) => {
-  radioButton.removeEventListener("change", handleThemeChange); // Remove if already attached
-  radioButton.addEventListener("change", handleThemeChange); // Add fresh listener
+radioButtons.forEach(radioButton => {
+  radioButton.removeEventListener('change', handleThemeChange); // Remove if already attached
+  radioButton.addEventListener('change', handleThemeChange); // Add fresh listener
 });
 
 // Handle color picker changes
@@ -281,7 +282,7 @@ const handleColorPickerChange = function (event) {
   applyCustomTheme(selectedColor);
 
   // Uncheck all radio buttons
-  radioButtons.forEach((radio) => {
+  radioButtons.forEach(radio => {
     radio.checked = false;
   });
 };
@@ -296,121 +297,124 @@ const throttle = (func, limit) => {
       lastRan = Date.now();
     } else {
       clearTimeout(lastFunc);
-      lastFunc = setTimeout(() => {
-        if (Date.now() - lastRan >= limit) {
-          func(...args);
-          lastRan = Date.now();
-        }
-      }, limit - (Date.now() - lastRan));
+      lastFunc = setTimeout(
+        () => {
+          if (Date.now() - lastRan >= limit) {
+            func(...args);
+            lastRan = Date.now();
+          }
+        },
+        limit - (Date.now() - lastRan)
+      );
     }
   };
 };
 
 // Add listeners for color picker
-colorPicker.removeEventListener("input", handleColorPickerChange); // Ensure no duplicate listeners
-colorPicker.addEventListener("input", throttle(handleColorPickerChange, 10));
+colorPicker.removeEventListener('input', handleColorPickerChange); // Ensure no duplicate listeners
+colorPicker.addEventListener('input', throttle(handleColorPickerChange, 10));
 
 // End of Function to apply the selected theme
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Darkmode
   const enableDarkModeCheckbox = document.getElementById(
-    "enableDarkModeCheckbox"
+    'enableDarkModeCheckbox'
   );
-  enableDarkModeCheckbox.addEventListener("change", function () {
-    saveCheckboxState("enableDarkModeCheckboxState", enableDarkModeCheckbox);
+  enableDarkModeCheckbox.addEventListener('change', function () {
+    saveCheckboxState('enableDarkModeCheckboxState', enableDarkModeCheckbox);
   });
-  loadCheckboxState("enableDarkModeCheckboxState", enableDarkModeCheckbox);
+  loadCheckboxState('enableDarkModeCheckboxState', enableDarkModeCheckbox);
 });
 
 //------------------------- LoadingScreen -----------------------//
 
 function ApplyLoadingColor() {
   let LoadingScreenColor = getComputedStyle(document.body).getPropertyValue(
-    "background-color"
+    'background-color'
   );
-  localStorage.setItem("LoadingScreenColor", LoadingScreenColor);
+  localStorage.setItem('LoadingScreenColor', LoadingScreenColor);
 }
 
 // ------------------------------------ Tips ------------------------------------
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Hide tips that are not relevant to mobile
   if (!isDesktop) {
     document
-      .querySelectorAll(".hideOnMobile")
-      .forEach((el) => (el.style.display = "none"));
+      .querySelectorAll('.hideOnMobile')
+      .forEach(el => (el.style.display = 'none'));
   }
 
   // Determine the correct key for adjustZoomInfo based on OS
-  const adjustZoomInfo = document.getElementById("adjustZoomInfo");
+  const adjustZoomInfo = document.getElementById('adjustZoomInfo');
   let adjustZoomInfoText =
     translations[currentLanguage]?.adjustZoomInfo ||
-    translations["en"].adjustZoomInfo;
+    translations['en'].adjustZoomInfo;
   if (isMac) {
-    adjustZoomInfoText = adjustZoomInfoText.replace(/Ctrl/g, "⌘");
+    adjustZoomInfoText = adjustZoomInfoText.replace(/Ctrl/g, '⌘');
   }
   adjustZoomInfo.textContent = adjustZoomInfoText;
 
   // Change browser theme info based on the user's browser
   const changeBrowserThemeInfo = document.getElementById(
-    "changeBrowserThemeInfo"
+    'changeBrowserThemeInfo'
   );
   if (isFirefoxAll) {
     changeBrowserThemeInfo.innerHTML =
       translations[currentLanguage]?.firefoxThemeInfo ||
-      translations["en"].firefoxThemeInfo;
+      translations['en'].firefoxThemeInfo;
   } else if (isEdge) {
     changeBrowserThemeInfo.innerHTML =
       translations[currentLanguage]?.edgeThemeInfo ||
-      translations["en"].edgeThemeInfo;
+      translations['en'].edgeThemeInfo;
   } else if (isBrave) {
     changeBrowserThemeInfo.innerHTML =
       translations[currentLanguage]?.braveThemeInfo ||
-      translations["en"].braveThemeInfo;
+      translations['en'].braveThemeInfo;
   } else {
     changeBrowserThemeInfo.innerHTML =
       translations[currentLanguage]?.chromeThemeInfo ||
-      translations["en"].chromeThemeInfo;
+      translations['en'].chromeThemeInfo;
   }
 
-  const firefoxHomepage = document.getElementById("firefoxHomepage");
+  const firefoxHomepage = document.getElementById('firefoxHomepage');
   const updateFirefoxHomepageInfo = document.getElementById(
-    "updateFirefoxHomepageInfo"
+    'updateFirefoxHomepageInfo'
   );
   if (isFirefox) {
-    firefoxHomepage.style.display = "block";
+    firefoxHomepage.style.display = 'block';
     updateFirefoxHomepageInfo.innerHTML =
       translations[currentLanguage]?.updateFirefoxHomepageInfo ||
-      translations["en"].updateFirefoxHomepageInfo;
+      translations['en'].updateFirefoxHomepageInfo;
   }
 
   // Hide tips
-  const tips = document.getElementById("tips");
-  const dontShowButton = document.getElementById("dontShowTips");
+  const tips = document.getElementById('tips');
+  const dontShowButton = document.getElementById('dontShowTips');
 
   // Check if the user has previously disabled tips
-  if (localStorage.getItem("hideTips") === "true") {
-    tips.style.display = "none";
+  if (localStorage.getItem('hideTips') === 'true') {
+    tips.style.display = 'none';
   }
 
   // Hide tips and save preference when button is clicked
-  dontShowButton.addEventListener("click", function () {
-    tips.style.display = "none";
-    localStorage.setItem("hideTips", "true"); // Save preference
+  dontShowButton.addEventListener('click', function () {
+    tips.style.display = 'none';
+    localStorage.setItem('hideTips', 'true'); // Save preference
   });
 });
 // ----
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // --- Direction Detection Logic ---
-  const textElements = document.querySelectorAll(".dir-switch");
+  const textElements = document.querySelectorAll('.dir-switch');
 
-  textElements.forEach((element) => {
+  textElements.forEach(element => {
     resetToLTR(element);
-    element.addEventListener("input", function () {
+    element.addEventListener('input', function () {
       updateTextDirection(this);
       syncResultItems(this);
     });
-    element.addEventListener("paste", function () {
+    element.addEventListener('paste', function () {
       setTimeout(() => {
         updateTextDirection(this);
         syncResultItems(this);
@@ -420,12 +424,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateTextDirection(el) {
     const text = el.value || el.textContent;
-    if (!text || text.trim() === "") {
+    if (!text || text.trim() === '') {
       resetToLTR(el);
       return;
     }
 
-    const persianArabicRegex = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
+    const persianArabicRegex =
+      /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
     const hasPersianArabic = persianArabicRegex.test(text);
     const englishRegex = /[a-zA-Z]/;
     const hasEnglish = englishRegex.test(text);
@@ -442,45 +447,45 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function setRTL(el) {
-    el.style.textAlign = "right";
-    el.style.direction = "rtl";
-    el.classList.add("text-right", "rtl");
-    el.classList.remove("text-left", "ltr");
+    el.style.textAlign = 'right';
+    el.style.direction = 'rtl';
+    el.classList.add('text-right', 'rtl');
+    el.classList.remove('text-left', 'ltr');
     syncResultItems(el);
   }
 
   function resetToLTR(el) {
-    el.style.textAlign = "left";
-    el.style.direction = "ltr";
-    el.classList.add("text-left", "ltr");
-    el.classList.remove("text-right", "rtl");
+    el.style.textAlign = 'left';
+    el.style.direction = 'ltr';
+    el.classList.add('text-left', 'ltr');
+    el.classList.remove('text-right', 'rtl');
     syncResultItems(el);
   }
 
   // --- Synchronization Logic ---
   function syncResultItems(sourceElement) {
-    const resultItems = document.querySelectorAll(".resultBox");
+    const resultItems = document.querySelectorAll('.resultBox');
     if (!resultItems.length) return;
 
-    const isRTL = window.getComputedStyle(sourceElement).direction === "rtl";
+    const isRTL = window.getComputedStyle(sourceElement).direction === 'rtl';
 
-    resultItems.forEach((item) => {
+    resultItems.forEach(item => {
       // Sync styles
-      item.style.textAlign = isRTL ? "right" : "left";
-      item.style.direction = isRTL ? "rtl" : "ltr";
-      
+      item.style.textAlign = isRTL ? 'right' : 'left';
+      item.style.direction = isRTL ? 'rtl' : 'ltr';
+
       // Sync classes
       if (isRTL) {
-        item.classList.add("text-right", "rtl");
-        item.classList.remove("text-left", "ltr");
+        item.classList.add('text-right', 'rtl');
+        item.classList.remove('text-left', 'ltr');
       } else {
-        item.classList.add("text-left", "ltr");
-        item.classList.remove("text-right", "rtl");
+        item.classList.add('text-left', 'ltr');
+        item.classList.remove('text-right', 'rtl');
       }
     });
   }
 
   // Initial sync
-  const defaultDirSwitch = document.querySelector(".dir-switch");
+  const defaultDirSwitch = document.querySelector('.dir-switch');
   if (defaultDirSwitch) syncResultItems(defaultDirSwitch);
 });

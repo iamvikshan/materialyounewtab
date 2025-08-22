@@ -6,15 +6,15 @@
  * If not, see <https://www.gnu.org/licenses/>.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 @font-face {
-  font-family: "poppins";
-  src: url("./fonts/Poppins-Regular.ttf") format("truetype");
+  font-family: 'poppins';
+  src: url('./fonts/Poppins-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: "iransans";
-  src: url("./fonts/IRANSansXNoEn-Regular.ttf") format("truetype");
+  font-family: 'iransans';
+  src: url('./fonts/IRANSansXNoEn-Regular.ttf') format('truetype');
 }
 
 * {
@@ -27,7 +27,7 @@
 
 :root {
   /* Default font */
-  --main-font-family: "iransans", "poppins", "Poppins", sans-serif;
+  --main-font-family: 'iransans', 'poppins', 'Poppins', sans-serif;
 
   /* 🔵🔵🔵 */
   /* ⚠️ Please don't change the color value or names for Blue (if ? modifying code would be difficult */
@@ -188,7 +188,7 @@ body {
   margin: 0; /* Remove margin to avoid unwanted spacing */
 }
 
-html:has(body[data-bg="color"] .menuBar #enableDarkModeCheckbox:checked):not(
+html:has(body[data-bg='color'] .menuBar #enableDarkModeCheckbox:checked):not(
     :has(#darkTheme:checked)
   ) {
   filter: invert(1) hue-rotate(180deg);
@@ -205,11 +205,11 @@ html:has(body[data-bg="color"] .menuBar #enableDarkModeCheckbox:checked):not(
   --whitishColor-blue: #f2f2f2;
 }
 
-body[data-bg="wallpaper"]:has(.menuBar #enableDarkModeCheckbox:checked):not(
+body[data-bg='wallpaper']:has(.menuBar #enableDarkModeCheckbox:checked):not(
     :has(#darkTheme:checked)
   )
   > *:not(.menuBar, #bookmarksContainer),
-body[data-bg="wallpaper"]:has(.menuBar #enableDarkModeCheckbox:checked):not(
+body[data-bg='wallpaper']:has(.menuBar #enableDarkModeCheckbox:checked):not(
     :has(#darkTheme:checked)
   )
   :is(.menuCont, .bookmark-sidebar) {
@@ -238,7 +238,10 @@ body[data-bg="wallpaper"]:has(.menuBar #enableDarkModeCheckbox:checked):not(
   opacity: 0;
   z-index: -100;
   transform: translateY(-70px);
-  transition: opacity 0.5s ease, transform 0.5s ease, z-index 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    z-index 0.5s ease;
   pointer-events: none;
 }
 
@@ -251,7 +254,7 @@ body[data-bg="wallpaper"]:has(.menuBar #enableDarkModeCheckbox:checked):not(
 }
 
 .centerDiv:has(.resultBox.show) ~ #shortcuts-section,
-.centerDiv:has(.dropdown-content[style="display: block;"])
+.centerDiv:has(.dropdown-content[style='display: block;'])
   ~ #shortcuts-section {
   z-index: -1;
 }
@@ -283,7 +286,7 @@ body[data-bg="wallpaper"]:has(.menuBar #enableDarkModeCheckbox:checked):not(
   color: var(--textColorDark-blue);
 }
 .resultItem::before {
-  content: "-";
+  content: '-';
   font-weight: bold;
   vertical-align: middle;
 }
@@ -423,7 +426,9 @@ body[data-bg="wallpaper"]:has(.menuBar #enableDarkModeCheckbox:checked):not(
   text-align: center;
   padding: 10px;
   border-radius: 10px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
   text-decoration: none;
   cursor: pointer;
   position: relative;
@@ -554,7 +559,7 @@ body[data-bg="wallpaper"]:has(.menuBar #enableDarkModeCheckbox:checked):not(
   transition: right 0.3s ease;
 }
 
-.bookmark-button:has(~ .googleAppsCont[style="display: flex;"]) {
+.bookmark-button:has(~ .googleAppsCont[style='display: flex;']) {
   inset-inline-end: calc(2 * var(--gap) + 36px);
 }
 
@@ -629,8 +634,8 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .bookmark-search-container::after {
-  content: "";
-  background: url("./svgs/bookmarksSearch.svg") no-repeat center / contain;
+  content: '';
+  background: url('./svgs/bookmarksSearch.svg') no-repeat center / contain;
   width: 18px;
   filter: invert(1);
   height: 18px;
@@ -754,7 +759,9 @@ body #bookmarkButton.bookmark-button.rotate {
   text-overflow: ellipsis;
   padding: 4px 8px;
   color: var(--darkColor-blue);
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 #sortAlphabetical {
@@ -829,7 +836,7 @@ body #bookmarkButton.bookmark-button.rotate {
 
 #bookmarkList:is(.grid-view) li a:has(.favicon)::after,
 #bookmarkList:is(.grid-view) li a:has(.favicon)::before {
-  content: "";
+  content: '';
   background: var(--bg-color-blue);
   position: absolute;
   width: 48px;
@@ -1201,12 +1208,12 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .todolistitem::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 18px;
   width: 18px;
   border-radius: 50%;
-  background: url("./svgs/todo-check-stroke.svg") no-repeat center center /
+  background: url('./svgs/todo-check-stroke.svg') no-repeat center center /
     contain;
   top: 50%;
   transform: translateY(-50%);
@@ -1216,7 +1223,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .todolistitem.checked::before {
-  background-image: url("./svgs/todo-check-fill.svg");
+  background-image: url('./svgs/todo-check-fill.svg');
 }
 
 .todolistitem.checked {
@@ -1251,12 +1258,12 @@ body #bookmarkButton.bookmark-button.rotate {
 
 .todolistitem .todopinbtn {
   inset-inline-end: 28px;
-  background: url("./svgs/todo-pin-stroke.svg") no-repeat center center /
+  background: url('./svgs/todo-pin-stroke.svg') no-repeat center center /
     contain;
 }
 
 .todolistitem.pinned .todopinbtn {
-  background-image: url("./svgs/todo-pin-fill.svg");
+  background-image: url('./svgs/todo-pin-fill.svg');
 }
 
 .todolistitem:first-child {
@@ -1338,7 +1345,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 #hour::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 20px;
   height: 30px;
@@ -1353,7 +1360,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 #minute::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 20px;
   height: 30px;
@@ -1368,7 +1375,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 #second::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 20px;
   height: 20px;
@@ -1388,7 +1395,7 @@ body #bookmarkButton.bookmark-button.rotate {
   justify-content: center;
 }
 
-#digitalClock[style="display: block;"] + .ttteexxtt {
+#digitalClock[style='display: block;'] + .ttteexxtt {
   top: 1rem;
 }
 
@@ -1564,11 +1571,11 @@ body #bookmarkButton.bookmark-button.rotate {
 
 .humidityBar::after {
   position: absolute;
-  content: "";
+  content: '';
   height: 100%;
   width: 40px;
   background-color: var(--darkColor-blue);
-  background-image: url("./svgs/humidity.svg");
+  background-image: url('./svgs/humidity.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 66%;
@@ -1780,7 +1787,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .micIcon::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: -3px;
   border-radius: 50%;
@@ -1867,7 +1874,9 @@ body #bookmarkButton.bookmark-button.rotate {
   margin-inline-end: 5px; /* 16px */
   border-radius: var(--round);
   cursor: pointer;
-  transition: border-radius 0.4s, margin-inline-start 0.4s;
+  transition:
+    border-radius 0.4s,
+    margin-inline-start 0.4s;
 }
 
 :dir(rtl) .searchWithCont .hint {
@@ -1948,7 +1957,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 /* -----------Radio Button Customizing------------ */
-.search-engine input[type="radio"] {
+.search-engine input[type='radio'] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1963,12 +1972,14 @@ body #bookmarkButton.bookmark-button.rotate {
   /* transition: 0.2s; */
 }
 
-.search-engine input[type="radio"]:checked {
+.search-engine input[type='radio']:checked {
   background-color: var(--darkColor-blue);
 }
 
-.theme-transition .search-engine input[type="radio"] {
-  transition: background-color 0.2s ease, border 0.2s ease;
+.theme-transition .search-engine input[type='radio'] {
+  transition:
+    background-color 0.2s ease,
+    border 0.2s ease;
 }
 
 /* ----------- Quotes ------------ */
@@ -2098,7 +2109,7 @@ body #bookmarkButton.bookmark-button.rotate {
 
 .shortcutsContainer::before {
   border-radius: 34px;
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   inset-inline-start: 0;
@@ -2255,7 +2266,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .aiToolsCont .toolsCont::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 100%;
   width: 6px;
@@ -2374,7 +2385,7 @@ body #bookmarkButton.bookmark-button.rotate {
   margin-bottom: 0;
 }
 
-#aiToolsForm .ai-tool-option input[type="checkbox"] {
+#aiToolsForm .ai-tool-option input[type='checkbox'] {
   vertical-align: middle;
   margin-inline-end: 8px;
   accent-color: var(--darkColor-blue);
@@ -2483,7 +2494,7 @@ body #bookmarkButton.bookmark-button.rotate {
 
 .menuCont .topDiv::after {
   position: absolute;
-  content: "";
+  content: '';
   width: 100%;
   height: var(--gap);
   background-color: var(--accentLightTint-blue);
@@ -2655,7 +2666,7 @@ body #bookmarkButton.bookmark-button.rotate {
 /* Styling for the slider when it's in the "on" position */
 .toggle:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 16px;
   width: 16px;
   inset-inline-start: 9px;
@@ -3066,7 +3077,7 @@ input:checked + .toggle:before {
   border-radius: 26px;
 }
 
-.colorsContainer input[type="radio"] {
+.colorsContainer input[type='radio'] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3079,60 +3090,60 @@ input:checked + .toggle:before {
   cursor: pointer;
 }
 
-.colorsContainer input[value="blue"] {
+.colorsContainer input[value='blue'] {
   background-color: #4382ec;
 }
 
-.colorsContainer input[value="yellow"] {
+.colorsContainer input[value='yellow'] {
   background-color: #ffcc00;
 }
 
-.colorsContainer input[value="red"] {
+.colorsContainer input[value='red'] {
   background-color: #ec4343;
 }
 
-.colorsContainer input[value="green"] {
+.colorsContainer input[value='green'] {
   background-color: #5cba5c;
 }
 
-.colorsContainer input[value="cyan"] {
+.colorsContainer input[value='cyan'] {
   background-color: #00ced1;
 }
 
-.colorsContainer input[value="orange"] {
+.colorsContainer input[value='orange'] {
   background-color: #ec844d;
 }
 
-.colorsContainer input[value="purple"] {
+.colorsContainer input[value='purple'] {
   background-color: #9563b5;
 }
 
-.colorsContainer input[value="pink"] {
+.colorsContainer input[value='pink'] {
   background-color: #ec5e78;
 }
 
-.colorsContainer input[value="brown"] {
+.colorsContainer input[value='brown'] {
   background-color: #705347;
 }
 
-.colorsContainer input[value="silver"] {
+.colorsContainer input[value='silver'] {
   background-color: #9e9e9e;
 }
 
-.colorsContainer input[value="peach"] {
+.colorsContainer input[value='peach'] {
   background: linear-gradient(45deg, #bb4dee, #f8b880);
 }
 
-.colorsContainer input[value="dark"] {
+.colorsContainer input[value='dark'] {
   background-color: #171717;
 }
 
-.colorsContainer input[type="radio"]:checked::after {
+.colorsContainer input[type='radio']:checked::after {
   position: absolute;
-  content: "";
+  content: '';
   width: 36px;
   height: 36px;
-  background: url("./svgs/tick.svg") center center no-repeat;
+  background: url('./svgs/tick.svg') center center no-repeat;
   background-size: 74%;
 }
 
@@ -3181,7 +3192,9 @@ input:checked + .toggle:before {
   border: none;
   border-radius: 23px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .randomButton {
@@ -3193,7 +3206,9 @@ input:checked + .toggle:before {
   border: none;
   border-radius: 26px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   padding: 10px;
 }
 
@@ -3207,7 +3222,9 @@ input:checked + .toggle:before {
   border: none;
   border-radius: 26px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 /* Hover Effects */
@@ -3317,7 +3334,8 @@ input:checked + .toggle:before {
   background-color: var(--accentLightTint-blue);
   border-radius: 50%;
   border: 6px solid var(--accentLightTint-blue);
-  box-shadow: inset 0 0 0 4px var(--darkColor-blue),
+  box-shadow:
+    inset 0 0 0 4px var(--darkColor-blue),
     inset 0 0 0 9.7px var(--accentLightTint-blue),
     inset 0 0 0 40px var(--darkColor-blue);
   cursor: pointer;
@@ -3469,7 +3487,7 @@ input:checked + .toggle:before {
 
 .dropdown-item.selected:not(*[data-default]):before {
   /* border-radius: 16px; */
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background-color: var(--bg-color-blue);
@@ -3481,7 +3499,7 @@ input:checked + .toggle:before {
   outline: none !important;
 }
 
-*[id$="-dropdown"]:not(.dropdown-content .dropdown-item:nth-child(1)) {
+*[id$='-dropdown']:not(.dropdown-content .dropdown-item:nth-child(1)) {
   bottom: 3px;
 }
 
@@ -3886,15 +3904,15 @@ input:checked + .toggle:before {
   .searchEnginesContainer {
     display: none;
   }
-  .shortcutsContainer[style="display: none;"] {
+  .shortcutsContainer[style='display: none;'] {
     display: flex !important;
   }
   .hangno:has(
-      + :is(
-          .toolsCont[style="display: flex; opacity: 1; transform: translateX(0px); gap: 12px;"],
-          .toolsCont[style="display: flex; opacity: 0; transform: translateX(-100%); gap: 0px;"]
-        )
-    ) {
+    + :is(
+      .toolsCont[style='display: flex; opacity: 1; transform: translateX(0px); gap: 12px;'],
+      .toolsCont[style='display: flex; opacity: 0; transform: translateX(-100%); gap: 0px;']
+    )
+  ) {
     & .icon {
       margin: 0;
     }
@@ -3936,12 +3954,12 @@ input:checked + .toggle:before {
 }
 
 /* ------------------- Dark(Black) theme ------------------- */
-.dark-theme .search-engine input[type="radio"]:checked {
+.dark-theme .search-engine input[type='radio']:checked {
   background-color: #2a2a2a;
   border: 2px solid #919191;
 }
 
-.dark-theme .search-engine input[type="radio"] {
+.dark-theme .search-engine input[type='radio'] {
   background-color: #9d9d9d;
   border: 0px solid #000000;
 }
@@ -4188,8 +4206,10 @@ input:checked + .toggle:before {
 
 .dark-theme #menuButton {
   border: 6px solid var(--accentLightTint-blue);
-  box-shadow: inset 0 0 0 4px #858585,
-    inset 0 0 0 9.7px var(--accentLightTint-blue), inset 0 0 0 40px #bfbfbf;
+  box-shadow:
+    inset 0 0 0 4px #858585,
+    inset 0 0 0 9.7px var(--accentLightTint-blue),
+    inset 0 0 0 40px #bfbfbf;
 }
 
 .dark-theme #menuCloseButton,

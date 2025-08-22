@@ -3,3 +3,9 @@
 
 # Ignore VSCode workspace settings
 .vscode/
+bun.lock
+node_modules/
+
+# Build artifacts
+dist/
+*.zip
