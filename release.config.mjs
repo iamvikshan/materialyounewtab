@@ -95,6 +95,8 @@ export default {
           "sed -i 's|refs/tags/v[0-9]\\+\\.[0-9]\\+\\.[0-9]\\+\\.zip|refs/tags/v${nextRelease.version}.zip|g' README.md",
           // Update package.json version
           'npm version ${nextRelease.version} --no-git-tag-version',
+          // Rebuild extension packages with updated versions
+          'bun run clean && bun run build',
         ].join(' && '),
       },
     ],

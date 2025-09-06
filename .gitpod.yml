@@ -1,0 +1,21 @@
+# Gitpod configuration for Material You New Tab
+# Based on the devcontainer configuration with Ubuntu + Bun + Node setup
+
+# Use custom Docker image optimized for Gitpod
+image: vikshan/gitpod-ubuntu-bun:latest
+
+# Configure VS Code extensions to match devcontainer setup
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - GitHub.copilot
+    - esbenp.prettier-vscode
+    - eamodio.gitlens
+    - oven.bun-vscode
+
+# Tasks configuration
+tasks:
+  - name: 'Setup & Build'
+    before: apt-get update && apt-get install -y zip
+    init: bun install
+    command: echo "Workspace ready! Run 'bun run build' to build the project."

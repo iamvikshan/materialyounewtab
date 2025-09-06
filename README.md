@@ -2,7 +2,7 @@
 <!-- Originally created by XengShi, now maintained by Vikshan -->
 <h1 align="center">
 
-<a href="https://iamvikshan.github.io/materialyounewtab/"><img src="https://i.ibb.co/x11pGSs/icon-128.png" width="50"></a>
+<a href="https://mynewtab.vikshan.me/"><img src="https://i.ibb.co/x11pGSs/icon-128.png" width="50"></a>
 <br>
 Material You NewTab
 
@@ -39,7 +39,7 @@ Material You NewTab is a versatile browser extension that personalizes your New 
 
 <img src="https://i.postimg.cc/CF43Yzj1/material-you-new-Tab-poster.webp" alt="Screenshot 1" width="100%">
 
-#### 🔴 🟡 🟢 Test live: [https://iamvikshan.github.io/materialyounewtab/](https://iamvikshan.github.io/materialyounewtab/)
+#### 🔴 🟡 🟢 Test live: [https://mynewtab.vikshan.me/](https://mynewtab.vikshan.me/)
 
 ## ✨ Features
 
@@ -197,7 +197,7 @@ For a step-by-step walkthrough, watch this [installation guide video](https://yo
 | <img src='https://flagcdn.com/uz.svg' width=20> &nbsp; **Uzbek** - O'zbek                   |  uz   | [Firdavs](https://github.com/Firdavs9512/)                                                |
 | <img src='https://flagcdn.com/vn.svg' width=20> &nbsp; **Vietnamese** - Tiếng Việt          |  vn   | [Diep](https://github.com/diepdo1810/), [Tuan](https://github.com/Tuan1-2-3)              |
 
-Check the [Translation Status Page](https://iamvikshan.github.io/materialyounewtab/tools/languagesAnalysis.html) for an overview of completed languages and missing strings analysis.
+Check the [Translation Status Page](https://mynewtab.vikshan.me/tools/languagesAnalysis.html) for an overview of completed languages and missing strings analysis.
 
 <details>
 <summary><h2>📖 Usage</h2></summary>
@@ -293,7 +293,7 @@ Here is the star history chart for the **Material You NewTab** repository. It sh
 
 ## 🛡 Privacy Policy
 
-Material You NewTab respects your privacy. For more details, read our [Privacy Policy](https://iamvikshan.github.io/materialyounewtab/privacy-policy.html).
+Material You NewTab respects your privacy. For more details, read our [Privacy Policy](https://mynewtab.vikshan.me/privacy-policy.html).
 
 ## 📜 License
 
