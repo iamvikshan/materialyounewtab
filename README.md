@@ -52,7 +52,7 @@ Material You NewTab is a versatile browser extension that personalizes your New 
 
 ### Download
 
-1. **Development Version** (v1.0.0)
+1. **Development Version** (v1.0.1)
    - **Clone the Repository**:
      Use the following command to clone the repository:
 
@@ -66,10 +66,10 @@ Material You NewTab is a versatile browser extension that personalizes your New 
 
    - You can also download the ZIP file by clicking on the Code button. On the repository page, look for a green button labeled **Code**. Click on the **Code** button, and in the dropdown menu, select **Download ZIP**.
 
-2. **Stable Release** (v1.0.0)
+2. **Stable Release** (v1.0.1)
 
 <p align="center">
-    <a href="https://github.com/iamvikshan/materialyounewtab/archive/refs/tags/v1.0.0.zip"><img src="https://img.shields.io/badge/GitHub-blue?style=for-the-badge&logo=github&logoColor=white&labelColor=grey&color=blue" alt="Download from GitHub" height="47" /></a>
+    <a href="https://github.com/iamvikshan/materialyounewtab/archive/refs/tags/v1.0.1.zip"><img src="https://img.shields.io/badge/GitHub-blue?style=for-the-badge&logo=github&logoColor=white&labelColor=grey&color=blue" alt="Download from GitHub" height="47" /></a>
     <!-- <a href="https://chromewebstore.google.com/detail/material-you-newtab/glloabhodjfmeoccmdngmhkpmdlakfbn"><img src="https://github.com/user-attachments/assets/20a6e44b-fd46-4e6c-8ea6-aad436035753" alt="Download from Chrome Web Store" height="48" /></a>
     <a href="https://addons.mozilla.org/en-US/firefox/addon/material-you-newtab/"><img src="https://github.com/user-attachments/assets/c0e99e6b-97cf-4af2-9737-099db7d3538b" alt="Download from Mozilla Add-ons" height="48" /></a>
      <a href="https://microsoftedge.microsoft.com/addons/detail/glloabhodjfmeoccmdngmhkpmdlakfbn"><img height="48" src="https://github.com/user-attachments/assets/204157eb-4cae-4c0e-b2cb-db514419fd9e" alt="Download from the Edge Add-ons" /></a> -->
